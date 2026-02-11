@@ -4,7 +4,6 @@
     settings = {
       vim.viAlias = true;
       vim.vimAlias = true;
-      vim.globals.mapleader = "t";
       vim.lsp = {
         enable = true;
         formatOnSave = true;
@@ -12,7 +11,7 @@
         lspkind.enable = false;
         lspsaga.enable = false;
         harper-ls.enable = true;
-        lspSignature.enable = true;
+        inlayHints.enable = true;
       };
       vim.spellcheck = {
         enable = true;
@@ -36,28 +35,25 @@
       vim.languages = {
         enableFormat = true;
         markdown.enable = true;
+        enableTreesitter = true;
         rust = {
           enable = true;
           lsp.enable = true;
           dap.enable = true;
-          treesitter.enable = true;
         };
         python = {
           enable = true;
           lsp.enable = true;
           dap.enable = true;
-          treesitter.enable = true;
         };
         clang = {
           enable = true;
           lsp.enable = true;
           dap.enable = true;
-          treesitter.enable = true;
         };
         nix = {
           enable = true;
           lsp.enable = true;
-          treesitter.enable = true;
         };
         assembly.enable = true;
         lua.enable = true;

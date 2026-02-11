@@ -34,6 +34,14 @@
     clock24 = true;
     terminal = "tmux-256color";
     keyMode = "vi";
+    plugins = with pkgs.tmuxPlugins; [
+      dotbar
+      harpoon
+      tmux-fzf
+      sysstat
+      yank
+      tilish
+    ];
   };
   programs.git = {
     enable = true;
