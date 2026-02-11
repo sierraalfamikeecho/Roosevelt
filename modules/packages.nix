@@ -1,0 +1,63 @@
+{
+  config,
+  pkgs,
+  ...
+}: {
+  nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+    tailscale-systray
+    pywal
+    wget
+    valgrind-light
+    typst
+    quickemu
+    qemu
+    git
+    neovim
+    nil
+    nixd
+    btop
+    fastfetch
+    zed-editor
+    anki
+    brave
+    steam-run
+    gh
+    rofi
+    gdb
+    fzf
+    swaybg
+    yazi
+    zathura
+    gimp
+    davinci-resolve
+    tenacity
+    obs-studio
+    obsidian
+    starship
+    pavucontrol
+    ghostty
+    verible
+    ruff
+    oterm
+    tmux
+    slurp
+    grim
+    wl-clipboard
+    tor-browser
+    kicad
+    waypaper
+    libclang
+    wlogout
+    xdg-desktop-portal-wlr
+    wl-clipboard
+    wl-clip-persist
+    cliphist
+    gammastep
+    vial
+    ungoogled-chromium
+    koruri
+    evil-helix
+  ];
+}

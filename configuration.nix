@@ -6,6 +6,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./modules/neovim.nix
+    ./modules/packages.nix
+    ./modules/services.nix
+    ./modules/roosevelt.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -46,65 +50,6 @@
     packages = with pkgs; [];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # System wide apps
-  environment.systemPackages = with pkgs; [
-    tailscale-systray
-    pywal
-    wget
-    valgrind-light
-    typst
-    quickemu
-    qemu
-    git
-    neovim
-    nil
-    nixd
-    btop
-    fastfetch
-    zed-editor
-    anki
-    brave
-    steam-run
-    gh
-    rofi
-    gdb
-    fzf
-    swaybg
-    yazi
-    zathura
-    gimp
-    davinci-resolve
-    tenacity
-    obs-studio
-    obsidian
-    starship
-    pavucontrol
-    ghostty
-    verible
-    ruff
-    oterm
-    tmux
-    slurp
-    grim
-    wl-clipboard
-    tor-browser
-    kicad
-    waypaper
-    libclang
-    wlogout
-    xdg-desktop-portal-wlr
-    wl-clipboard
-    wl-clip-persist
-    cliphist
-    gammastep
-    vial
-    ungoogled-chromium
-    koruri
-  ];
-
   fonts.packages = with pkgs; [
     nerd-fonts.victor-mono
     nerd-fonts.ubuntu-sans
@@ -126,179 +71,15 @@
   };
 
   programs.systemtap.enable = true;
-
-  services.ollama = {
-    enable = true;
-    package = pkgs.ollama-cuda;
-    loadModels = [
-      "gpt-oss:20b"
-      "devstral-small-2:24b"
-      "qwen3-vl:8b"
-    ];
-  };
-
-  services.open-webui = {
-    enable = true;
-  };
-  services.sunshine = {
-    enable = true;
-    autoStart = true;
-    capSysAdmin = true;
-    openFirewall = true;
-  };
-
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
   };
-  # mango, ly and waybar
-  programs.mango.enable = true;
-  services.displayManager.ly.enable = true;
-
-  # Nvidia GPU
-  hardware = {
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
-
-    nvidia = {
-      open = true;
-      modesetting.enable = true;
-      powerManagement.enable = true;
-    };
-  };
-
-  environment.variables = {
-    NVD_BACKEND = "direct";
-    LIBVA_DRIVER_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    GBM_BACKEND = "nvidia-drm";
-  };
-
-  services.xserver.videoDrivers = ["nvidia"];
-
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
 
   networking.nameservers = ["9.9.9.9" "149.112.112.112"];
-  services.tailscale = {
-    enable = true;
-    openFirewall = true;
-  };
-
-  services.resolved = {
-    enable = true;
-    settings.Resolve = {
-      DNSSEC = "true";
-      Domains = ["~."];
-      FallbackDNS = ["9.9.9.9" "149.112.112.112"];
-      DNSOverTLS = "true";
-    };
-  };
-
-  services.openssh = {
-    enable = true;
-    ports = [22];
-    settings = {
-      PasswordAuthentication = true;
-      AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
-      UseDns = true;
-      X11Forwarding = false;
-      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-    };
-  };
-
   programs.steam = {
     enable = true;
   };
-
-  programs.nvf = {
-    enable = true;
-    settings = {
-      vim.viAlias = true;
-      vim.vimAlias = true;
-      vim.lsp = {
-        enable = true;
-        formatOnSave = true;
-        lightbulb.enable = true;
-        lspkind.enable = false;
-        lspsaga.enable = false;
-      };
-      vim.debugger = {
-        nvim-dap = {
-          enable = true;
-          ui.enable = true;
-        };
-      };
-      vim.git.enable = true;
-      vim.telescope = {
-        enable = true;
-      };
-
-      vim.treesitter = {
-        enable = true;
-        context.enable = true;
-      };
-
-      vim.languages = {
-        enableFormat = true;
-        markdown.enable = true;
-        rust = {
-          enable = true;
-          lsp.enable = true;
-          dap.enable = true;
-          treesitter.enable = true;
-        };
-
-        python = {
-          enable = true;
-          lsp.enable = true;
-          dap.enable = true;
-          treesitter.enable = true;
-        };
-        clang = {
-          enable = true;
-          lsp.enable = true;
-          dap.enable = true;
-          treesitter.enable = true;
-        };
-        nix = {
-          enable = true;
-          lsp.enable = true;
-          treesitter.enable = true;
-        };
-        astro = {
-          enable = true;
-          lsp.enable = true;
-          treesitter.enable = true;
-        };
-        bash = {
-          enable = true;
-          lsp.enable = true;
-          treesitter.enable = true;
-        };
-        make = {
-          enable = true;
-        };
-      };
-      vim.autocomplete = {
-        nvim-cmp.enable = true;
-      };
-
-      vim.theme = {
-        enable = true;
-        name = "oxocarbon";
-        style = "dark";
-      };
-      vim.statusline.lualine = {
-        enable = true;
-        theme = "auto";
-      };
-    };
-  };
-
   boot.binfmt.emulatedSystems = [
     "aarch64-linux"
     "riscv64-linux"
