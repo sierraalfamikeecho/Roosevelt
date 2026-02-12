@@ -71,6 +71,8 @@
   };
 
   programs.systemtap.enable = true;
+  programs.bash.completion.enable = true;
+
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;

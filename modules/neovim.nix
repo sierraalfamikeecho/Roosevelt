@@ -1,4 +1,9 @@
 {
+  lib,
+  pkgs,
+  config,
+  ...
+}: {
   programs.nvf = {
     enable = true;
     settings = {
@@ -75,6 +80,15 @@
         colorizer.enable = true;
         illuminate.enable = true;
       };
+      vim.utility = {
+        yazi-nvim.enable = true;
+        diffview-nvim.enable = true;
+      };
+      vim.notes.obsidian.enable = true;
+      vim.statusline.lualine = {
+        enable = true;
+        theme = "auto";
+      };
       vim.theme = {
         enable = true;
         name = "base16";
@@ -96,10 +110,6 @@
           base0E = "#c397d8";
           base0F = "#a3685a";
         };
-      };
-      vim.statusline.lualine = {
-        enable = true;
-        theme = "auto";
       };
     };
   };

@@ -58,7 +58,7 @@
     vial
     ungoogled-chromium
     koruri
-    evil-helix
+    thunar
   ];
 
   fonts.packages = with pkgs; [
