@@ -12,7 +12,10 @@
     ./modules/roosevelt.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 2;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-78a4aa4f-3aa8-46df-9f3d-a1000e165776".device = "/dev/disk/by-uuid/78a4aa4f-3aa8-46df-9f3d-a1000e165776";
@@ -34,7 +37,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
   networking.wireless.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -47,7 +49,8 @@
     isNormalUser = true;
     description = "sam";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [];
+    packages = [
+    ];
   };
 
   fonts.packages = with pkgs; [

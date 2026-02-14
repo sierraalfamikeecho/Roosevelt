@@ -14,7 +14,7 @@
   programs.bash = {
     enable = true;
     initExtra = "
-        tmux
+        tmux a
         fastfetch
       ";
     shellAliases = {
@@ -41,6 +41,7 @@
       sysstat
       yank
       tilish
+      weather
     ];
   };
   programs.git = {
@@ -77,6 +78,30 @@
     systemd.enable = true;
   };
 
+  programs.anki = {
+    enable = true;
+    minimalistMode = true;
+    reduceMotion = true;
+    theme = "dark";
+    sync = {
+      syncMedia = true;
+      username = "twiddling_parcel406@simplelogin.com";
+    };
+    addons = with pkgs.ankiAddons; [
+      anki-connect
+      passfail2
+      review-heatmap
+    ];
+  };
+  services.flameshot = {
+    enable = true;
+    settings = {
+      General = {
+        startupLaunch = true;
+        copyPathAfterSave = true;
+      };
+    };
+  };
   services.gammastep = {
     enable = true;
     temperature.night = 2000;
