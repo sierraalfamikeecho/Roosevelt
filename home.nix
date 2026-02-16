@@ -14,7 +14,6 @@
   programs.bash = {
     enable = true;
     initExtra = "
-        tmux a
         fastfetch
       ";
     shellAliases = {
@@ -107,5 +106,15 @@
     temperature.night = 2000;
     dawnTime = "6:00-6:30";
     duskTime = "18:00-18:30";
+  };
+
+  programs.rofi = {
+    enable = true;
+    cycle = true;
+    font = "VictorMono Nerd Font 18";
+  };
+
+  services.playerctld = {
+    enable = true;
   };
 }

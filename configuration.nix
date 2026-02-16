@@ -14,7 +14,7 @@
 
   boot.loader.systemd-boot = {
     enable = true;
-    configurationLimit = 2;
+    configurationLimit = 5;
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -53,13 +53,6 @@
     ];
   };
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.victor-mono
-    nerd-fonts.ubuntu-sans
-    noto-fonts-cjk-sans
-    nerd-fonts.caskaydia-cove
-  ];
-
   i18n.inputMethod = {
     enable = true;
     type = "ibus";
@@ -71,6 +64,9 @@
 
   nix.gc = {
     automatic = true;
+    dates = [
+      "weekly"
+    ];
   };
 
   programs.systemtap.enable = true;

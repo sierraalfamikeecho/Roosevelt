@@ -8,10 +8,10 @@
     installVimSyntax = true;
     enableBashIntegration = true;
     settings = {
-      background-opacity = 0.975;
+      background-opacity = 0.9;
       background-blur = true;
       theme = "Tomorrow Night Bright";
-      font-size = 17;
+      font-size = 18;
       font-family = "VictorMono Nerd Font";
     };
   };
