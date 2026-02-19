@@ -33,9 +33,6 @@
     obsidian
     pavucontrol
     ghostty
-    verible
-    ruff
-    oterm
     tmux
     wl-clipboard
     kicad
@@ -50,6 +47,11 @@
     tor-browser
     playerctl
     lm_sensors
+    pulseview
+    libsigrok
+    sigrok-cli
+    nix-direnv
+    direnv
   ];
 
   fonts.packages = with pkgs; [

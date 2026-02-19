@@ -37,6 +37,7 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+  networking.firewall.checkReversePath = "loose";
   networking.wireless.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -77,7 +78,9 @@
     dockerCompat = true;
   };
 
-  networking.nameservers = ["9.9.9.9" "149.112.112.112"];
+  networking.nameservers = ["9.9.9.9" "149.112.112.112" "100.100.100.100" "8.8.8.8" "1.1.1.1"];
+  networking.search = ["example.ts.net"];
+
   programs.steam = {
     enable = true;
   };

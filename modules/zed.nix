@@ -5,13 +5,19 @@
 }: {
   programs.zed-editor = {
     enable = true;
-    extensions = ["nix" "verilog" "astro" "probe-rs" "base16" "make" "GDScript"];
     installRemoteServer = true;
-    extraPackages = [pkgs.nixd];
+    extraPackages = with pkgs; [
+      nixd
+      ruff
+      nil
+      libclang
+      haskell-language-server
+      zls
+    ];
     themes = {
       mode = "system";
-      dark = "base16-tomorrow-night";
-      light = "base16-tomorrow-night";
+      dark = "Compline";
+      light = "Compline";
     };
     userSettings = {
       telemetry = {
@@ -24,5 +30,26 @@
       disable_ai = false;
       buffer_font_family = "VictorMono Nerd Font Mono";
     };
+    extensions = [
+      "nix"
+      "verilog"
+      "astro"
+      "probe-rs"
+      "compline"
+      "make"
+      "toml"
+      "basher"
+      "neocmake"
+      "tcl"
+      "pylsp"
+      "gdscript"
+      "csharp"
+      "assembly"
+      "haskell"
+      "typst"
+      "vhdl"
+      "opencode"
+      "colored-zed-icons-theme"
+    ];
   };
 }

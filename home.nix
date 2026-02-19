@@ -48,7 +48,7 @@
     lfs.enable = true;
     settings = {
       user = {
-        email = "osamwonyi_eke@protonmail.com";
+        email = "supersaru@protonmail.com";
         name = "Sam";
       };
 

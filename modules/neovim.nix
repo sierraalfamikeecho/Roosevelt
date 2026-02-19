@@ -3,7 +3,8 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   programs.nvf = {
     enable = true;
     settings = {
@@ -17,6 +18,9 @@
         lspsaga.enable = false;
         harper-ls.enable = true;
         inlayHints.enable = true;
+        lspconfig = {
+          enable = true;
+        };
       };
       vim.spellcheck = {
         enable = true;
@@ -68,6 +72,7 @@
         astro.enable = true;
         bash.enable = true;
         make.enable = true;
+        go.enable = true;
       };
       vim.autocomplete = {
         nvim-cmp.enable = true;
@@ -84,7 +89,6 @@
         yazi-nvim.enable = true;
         diffview-nvim.enable = true;
       };
-      vim.notes.obsidian.enable = true;
       vim.statusline.lualine = {
         enable = true;
         theme = "auto";
