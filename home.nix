@@ -17,13 +17,6 @@
         fastfetch
       ";
     shellAliases = {
-      nixc = "sudo nvim /home/sam/.config/nix/configuration.nix && sudo nixos-rebuild switch --flake /home/sam/.config/nix";
-
-      nixf = "sudo nvim /home/sam/.config/nix/flake.nix && sudo nixos-rebuild switch --flake /home/sam/.config/nix";
-
-      nixh = "sudo nvim /home/sam/.config/nix/home.nix && sudo nixos-rebuild switch --flake /home/sam/.config/nix";
-
-      reload-nix = "sudo nixos-rebuild switch --flake /home/sam/.config/nix";
       firmware-menu = "sudo systemctl reboot --firmware-setup";
     };
   };
