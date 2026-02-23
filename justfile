@@ -5,6 +5,7 @@ rebuild:
 
 edit:
         sudo nvim
+        just rebuild
         git add -A
         git commit
         git push

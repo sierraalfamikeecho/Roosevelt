@@ -27,7 +27,7 @@
       vim_mode = true;
       ui_font_size = 16;
       buffer_font_size = 18;
-      disable_ai = false;
+      disable_ai = true;
       buffer_font_family = "VictorMono Nerd Font Mono";
     };
     extensions = [
@@ -50,6 +50,9 @@
       "vhdl"
       "opencode"
       "colored-zed-icons-theme"
+      "justfile"
+      "julia"
+      "ocaml"
     ];
   };
 }
