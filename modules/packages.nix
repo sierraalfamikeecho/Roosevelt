@@ -59,6 +59,7 @@
 
   programs.kdeconnect = {
     enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
   };
 
   fonts.packages = with pkgs; [
