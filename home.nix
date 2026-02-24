@@ -74,7 +74,7 @@
     enable = true;
 
     settings = {
-      DP-5 = {
+      defualt = {
         path = "/home/sam/Downloads/denys-nevozhai-j8Bc4UerZXY-unsplash.jpg";
       };
     };
