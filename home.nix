@@ -72,10 +72,9 @@
 
   services.wpaperd = {
     enable = true;
-
     settings = {
-      defualt = {
-        path = "~/Downloads/denys-nevozhai-j8Bc4UerZXY-unsplash.jpg";
+      any = {
+        path = "home/sam/Downloads/denys-nevozhai-j8Bc4UerZXY-unsplash.jpg";
       };
     };
   };
