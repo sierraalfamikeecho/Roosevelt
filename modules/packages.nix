@@ -55,6 +55,7 @@
     tailscale
     just
     kdePackages.kdeconnect-kde
+    wpaperd
   ];
 
   programs.kdeconnect = {

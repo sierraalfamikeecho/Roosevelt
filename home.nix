@@ -70,6 +70,16 @@
     systemd.enable = true;
   };
 
+  services.wpaperd = {
+    enable = true;
+
+    settings = {
+      DP-5 = {
+        path = "/home/sam/Downloads/denys-nevozhai-j8Bc4UerZXY-unsplash.jpg";
+      };
+    };
+  };
+
   programs.anki = {
     enable = true;
     minimalistMode = true;
