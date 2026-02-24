@@ -75,7 +75,7 @@
 
     settings = {
       defualt = {
-        path = "/home/sam/Downloads/denys-nevozhai-j8Bc4UerZXY-unsplash.jpg";
+        path = "~/Downloads/denys-nevozhai-j8Bc4UerZXY-unsplash.jpg";
       };
     };
   };
