@@ -3,8 +3,7 @@
   pkgs,
   config,
   ...
-}:
-{
+}: {
   programs.nvf = {
     enable = true;
     settings = {
@@ -18,8 +17,16 @@
         lspsaga.enable = false;
         harper-ls.enable = true;
         inlayHints.enable = true;
-        lspconfig = {
-          enable = true;
+        otter-nvim.enable = true;
+        servers = {
+          "verible" = {
+            root_markers = [".git"];
+            cmd = ["verible-verilog-ls"];
+            filetypes = [
+              "systemverilog"
+              "verilog"
+            ];
+          };
         };
       };
       vim.spellcheck = {
@@ -45,25 +52,30 @@
         enableFormat = true;
         markdown.enable = true;
         enableTreesitter = true;
+
         rust = {
           enable = true;
           lsp.enable = true;
           dap.enable = true;
         };
+
         python = {
           enable = true;
           lsp.enable = true;
           dap.enable = true;
         };
+
         clang = {
           enable = true;
           lsp.enable = true;
           dap.enable = true;
         };
+
         nix = {
           enable = true;
           lsp.enable = true;
         };
+
         assembly.enable = true;
         lua.enable = true;
         typst.enable = true;
@@ -74,9 +86,11 @@
         make.enable = true;
         go.enable = true;
       };
+
       vim.autocomplete = {
         nvim-cmp.enable = true;
       };
+
       vim.snippets.luasnip.enable = true;
       vim.autopairs.nvim-autopairs.enable = true;
 
@@ -85,13 +99,24 @@
         colorizer.enable = true;
         illuminate.enable = true;
       };
+
       vim.utility = {
         yazi-nvim.enable = true;
         diffview-nvim.enable = true;
       };
+
       vim.statusline.lualine = {
         enable = true;
-        theme = "auto";
+        theme = "codedark";
+        sectionSeparator = {
+          left = "|";
+          right = "|";
+        };
+      };
+
+      vim.dashboard.alpha = {
+        enable = true;
+        theme = "dashboard";
       };
       vim.theme = {
         enable = true;
