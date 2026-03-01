@@ -35,7 +35,7 @@
     ghostty
     tmux
     wl-clipboard
-    kicad
+    kicad-small
     wlogout
     xdg-desktop-portal-wlr
     wl-clipboard
@@ -55,6 +55,9 @@
     tailscale
     just
     verible
+    yubikey-manager
+    pam_u2f
+    yubioath-flutter
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.victor-mono

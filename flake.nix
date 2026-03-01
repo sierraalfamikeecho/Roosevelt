@@ -20,6 +20,10 @@
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -29,6 +33,7 @@
     home-manager,
     nvf,
     helium,
+    stylix,
   }: {
     nixosConfigurations.roosevelt = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -48,6 +53,7 @@
         {
           programs.mango.enable = true;
         }
+        stylix.nixosModules.stylix
       ];
     };
   };

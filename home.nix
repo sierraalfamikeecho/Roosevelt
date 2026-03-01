@@ -21,6 +21,12 @@
     };
   };
 
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   programs.tmux = {
     enable = true;
     clock24 = true;
@@ -34,6 +40,8 @@
       yank
       tilish
       weather
+      fuzzback
+      tmux-fzf
     ];
   };
   programs.git = {
@@ -109,7 +117,6 @@
   programs.rofi = {
     enable = true;
     cycle = true;
-    font = "VictorMono Nerd Font 18";
     plugins = with pkgs; [
       rofi-calc
       rofi-obsidian

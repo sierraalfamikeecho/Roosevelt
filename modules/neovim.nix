@@ -107,7 +107,6 @@
 
       vim.statusline.lualine = {
         enable = true;
-        theme = "codedark";
         sectionSeparator = {
           left = "|";
           right = "|";

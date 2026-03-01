@@ -25,8 +25,6 @@
       };
       hour_format = "hour24";
       vim_mode = true;
-      ui_font_size = 16;
-      buffer_font_size = 18;
       disable_ai = true;
       buffer_font_family = "VictorMono Nerd Font Mono";
     };

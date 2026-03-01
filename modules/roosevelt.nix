@@ -34,6 +34,28 @@
 
   services.xserver.videoDrivers = ["nvidia"];
 
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal-bathory.yaml";
+    targets = {
+      nvf.enable = false;
+    };
+    fonts = {
+      monospace = {
+        name = "VictorMono Nerd Font Mono";
+      };
+      sansSerif = {
+        name = "UbuntuSans Nerd Font";
+      };
+      serif = {
+        name = "UbuntuSansMono Nerd Font";
+      };
+      sizes = {
+        terminal = 18;
+      };
+    };
+  };
+
   # Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
