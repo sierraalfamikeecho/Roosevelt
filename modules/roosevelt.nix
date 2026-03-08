@@ -21,7 +21,12 @@
     nvidia = {
       open = true;
       modesetting.enable = true;
-      powerManagement.enable = true;
+      nvidiaSettings = true;
+      forceFullCompositionPipeline = true;
+      powerManagement = {
+        enable = true;
+        finegrained = false;
+      };
     };
   };
 
@@ -36,7 +41,7 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal-bathory.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa-dragon.yaml";
     targets = {
       nvf.enable = false;
     };
@@ -45,13 +50,16 @@
         name = "VictorMono Nerd Font Mono";
       };
       sansSerif = {
-        name = "UbuntuSans Nerd Font";
+        name = "IBM Plex Sans";
       };
       serif = {
-        name = "UbuntuSansMono Nerd Font";
+        name = "IBM Plex Serif";
       };
       sizes = {
+        applications = 14;
         terminal = 18;
+        desktop = 18;
+        popups = 10;
       };
     };
   };

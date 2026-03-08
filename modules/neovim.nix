@@ -76,15 +76,26 @@
           lsp.enable = true;
         };
 
-        assembly.enable = true;
+        assembly = {
+          enable = true;
+          lsp.enable = true;
+        };
         lua.enable = true;
-        typst.enable = true;
+        typst = {
+          enable = true;
+          lsp.enable = true;
+        };
         json.enable = true;
-        haskell.enable = true;
+        haskell = {
+          enable = true;
+          lsp.enable = true;
+        };
         astro.enable = true;
-        bash.enable = true;
+        bash = {
+          enable = true;
+          lsp.enable = true;
+        };
         make.enable = true;
-        go.enable = true;
       };
 
       vim.autocomplete = {

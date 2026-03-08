@@ -124,6 +124,16 @@
     ];
   };
 
+  programs.obsidian = {
+    enable = true;
+    defaultSettings = {
+      appearance = {
+        theme = "Flexoki";
+        textFontFamily = "IBM Plex Sans JP";
+      };
+    };
+  };
+
   services.playerctld = {
     enable = true;
   };

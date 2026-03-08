@@ -21,6 +21,9 @@
     steam-run
     gh
     rofi
+    rofi-obsidian
+    rofi-bluetooth
+    rofi-calc
     gdb
     fzf
     swaybg
@@ -55,14 +58,12 @@
     tailscale
     just
     verible
-    yubikey-manager
-    pam_u2f
-    yubioath-flutter
+    ollama
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.victor-mono
     nerd-fonts.ubuntu-sans
-    noto-fonts-cjk-sans
-    nerd-fonts.caskaydia-cove
+    nerd-fonts.lilex
+    ibm-plex
   ];
 }
