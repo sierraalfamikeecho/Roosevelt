@@ -4,8 +4,10 @@ rebuild:
         sudo nixos-rebuild switch --flake
 
 edit:
-        sudo nvim
+        sudo {{ EDITOR }}
         just rebuild
+        git add -A
+        git commit
 
 commit:
         git add -A
