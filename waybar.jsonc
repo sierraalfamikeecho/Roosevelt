@@ -15,7 +15,7 @@
         "modules-right": [
                 "tray",
                 "group/audio",
-                "group/networking",
+                "group/networking"
         ],
         "dwl/tags": {
                 "num-tags": 4
@@ -81,22 +81,5 @@
                 "format-ethernet": "󰈀",
                 "format-disconnected": "󱐅",
                 "tooltip-format": "{ipaddr}"
-        },
-        "battery": {
-                "states": {
-                        "warning": 30,
-                        "critical": 15
-                },
-                "format": "{capacity}% {icon}",
-                "format-icons": [
-                        "󰪞",
-                        "󰪟",
-                        "󰪠",
-                        "󰪡",
-                        "󰪢",
-                        "󰪣",
-                        "󰪤",
-                        "󰪥"
-                ]
         }
 }
