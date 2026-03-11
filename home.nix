@@ -75,7 +75,7 @@
   programs.waybar = {
     enable = true;
     systemd.enable = true;
-    style = "./waybar.css";
+    style = ./waybar.css;
   };
   services.swww = {
     enable = true;

@@ -39,31 +39,6 @@
 
   services.xserver.videoDrivers = ["nvidia"];
 
-  stylix = {
-    enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa-dragon.yaml";
-    targets = {
-      nvf.enable = false;
-    };
-    fonts = {
-      monospace = {
-        name = "VictorMono Nerd Font Mono";
-      };
-      sansSerif = {
-        name = "IBM Plex Sans";
-      };
-      serif = {
-        name = "IBM Plex Serif";
-      };
-      sizes = {
-        applications = 14;
-        terminal = 18;
-        desktop = 18;
-        popups = 10;
-      };
-    };
-  };
-
   # Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
