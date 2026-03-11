@@ -9,7 +9,6 @@
                 "disk",
                 "memory",
                 "cpu",
-                "temperature"
         ],
         "modules-center": [],
         "modules-right": [
@@ -36,10 +35,6 @@
         "cpu": {
                 "interval": 1,
                 "format": " {usage}%"
-        },
-        "temperature": {
-                "format": " {temperatureC}°C",
-                "critical-threshold": 80
         },
         "tray": {
                 "icon-size": 14,
