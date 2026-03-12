@@ -18,9 +18,9 @@
       ];
       modules-right = [
         "tray"
-        "group/audio"
         "cpu"
         "memory"
+        "group/audio"
         "clock"
       ];
       "ext/workspaces" = {

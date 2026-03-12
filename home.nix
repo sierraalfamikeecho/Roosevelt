@@ -12,6 +12,7 @@
     ./modules/shell.nix
     ./modules/waybar.nix
     ./modules/tmux.nix
+    ./modules/anki.nix
   ];
   programs.git = {
     enable = true;
@@ -43,21 +44,6 @@
     enable = true;
     extraArgs = [
       "img ./nebula.jpg"
-    ];
-  };
-  programs.anki = {
-    enable = true;
-    minimalistMode = true;
-    reduceMotion = true;
-    theme = "dark";
-    sync = {
-      syncMedia = true;
-      username = "twiddling_parcel406@simplelogin.com";
-    };
-    addons = with pkgs.ankiAddons; [
-      anki-connect
-      passfail2
-      review-heatmap
     ];
   };
   services.flameshot = {

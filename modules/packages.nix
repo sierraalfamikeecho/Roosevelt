@@ -22,9 +22,7 @@
     rofi-obsidian
     rofi-bluetooth
     rofi-calc
-    gdb
     fzf
-    swaybg
     yazi
     zathura
     gimp
@@ -46,7 +44,6 @@
     ungoogled-chromium
     koruri
     lm_sensors
-    pulseview
     libsigrok
     sigrok-cli
     nix-direnv
@@ -54,7 +51,6 @@
     tailscale
     just
     verible
-    ollama
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.victor-mono
