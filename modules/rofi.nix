@@ -10,6 +10,8 @@
       rofi-calc
       rofi-obsidian
       rofi-bluetooth
+      rofi-screenshot
+      rofi-pass-wayland
     ];
     theme = ./theme.rasi;
   };

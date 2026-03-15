@@ -9,7 +9,7 @@
     newSession = true;
     terminal = "tmux-256color";
     keyMode = "vi";
-    baseIndex = 1;
+    baseIndex = 0;
     plugins = with pkgs.tmuxPlugins; [
       dotbar
       harpoon

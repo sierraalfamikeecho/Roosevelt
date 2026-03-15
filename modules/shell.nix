@@ -16,18 +16,16 @@
     };
     interactiveShellInit = ''
       set fish_greeting
+      tmux
     '';
     plugins = [
       {
         name = "z";
         src = pkgs.fishPlugins.z;
       }
-      {
-        name = "forgit";
-        src = pkgs.fishPlugins.forgit;
-      }
     ];
   };
+
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
@@ -40,5 +38,4 @@
     enableFishIntegration = true;
     nix-direnv.enable = true;
   };
-  programs.zsh.enable = true;
 }

@@ -51,6 +51,7 @@
     tailscale
     just
     verible
+    tmux-sessionizer
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.victor-mono

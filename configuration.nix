@@ -10,6 +10,7 @@
     ./modules/packages.nix
     ./modules/services.nix
     ./modules/roosevelt.nix
+    ./modules/nvidia.nix
   ];
 
   boot.loader.systemd-boot = {

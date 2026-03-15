@@ -32,7 +32,7 @@
       general.hide_cursor = true;
       animations.enabled = false;
       background = {
-        path = "./nebula.jpg";
+        path = "~/.config/nix/nebula.jpg";
         blur_passes = 1;
         blur_size = 4;
       };
@@ -40,6 +40,8 @@
   };
   programs.starship = {
     enable = true;
+    enableFishIntegration = true;
+    enableBashIntegration = true;
   };
   services.swww = {
     enable = true;
@@ -63,20 +65,11 @@
     duskTime = "18:00-18:30";
   };
 
-  programs.rofi = {
-    enable = true;
-    cycle = true;
-    plugins = with pkgs; [
-      rofi-calc
-      rofi-obsidian
-      rofi-bluetooth
-    ];
-  };
   programs.distrobox = {
     enable = true;
     containers = {
       vivado = {
-        additional_packages = "git nix python3 fastfetch devenv libtinfo5 libncurses5 nala";
+        additional_packages = "git nix python3 fastfetch devenv libtinfo5 libncurses5 nala tcl";
         image = "ubuntu:latest";
         entry = true;
       };
@@ -94,7 +87,8 @@
   services.playerctld = {
     enable = true;
   };
-  services.tailscale-systray = {
+  services.trayscale = {
     enable = true;
+    hideWindow = true;
   };
 }
